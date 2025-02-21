@@ -1,0 +1,620 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url('/static/images/bg.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    margin: 0;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.body--punish {
+    background-image: url('/static/images/bg_punishment.jpg');
+}
+
+.body--space {
+    background-image: url('/static/images/bg_space.jpg');
+}
+
+/*текст, кнопки и поля для ввода*/
+.login-container {
+    background-color: transparent;
+    padding: 20px;
+    border-radius: 8px;
+    width: 280px;
+    text-align: center;
+}
+
+/*надписи*/
+label {
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input {
+    width: 90%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/*кнпока входа для /login*/
+button.buttons {
+    width: 100%;
+    padding: 10px;
+    background: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.7s ease;
+}
+
+button:hover {
+    background: #0056b3;
+    
+}
+
+/*уведомление при нажатии на изображение*/
+.popup { 
+    position: fixed; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    width: 300px; 
+    padding: 20px; 
+    background: rgba(0, 0, 0, 0.2); 
+    box-shadow: 0 0 3px rgba(255, 255, 255, 0.5); 
+    border-radius: 15px; 
+    text-align: center; 
+    backdrop-filter: blur(10px);
+    display: none; 
+    z-index: 1000;
+    
+}
+
+.popup--love6 {
+    width: 420px;
+}
+
+.popup-header {
+    text-align: right;
+}
+
+.close-btn {
+    background: transparent !important; 
+    border: none; 
+    font-size: 16px; 
+    cursor: pointer; 
+    color:#ffffff;
+    outline: none;
+}
+
+.close-btn:focus {
+    outline: none;
+}
+
+.close-btn--3 {
+    cursor: grabbing;
+}
+
+.popup-footer {
+    margin-top: 20px;
+}
+
+.overlay { 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    background: rgba(0, 0, 0, 0.5); 
+    display: none; 
+    z-index: 999; 
+}
+
+.btn { 
+    width: 100%;
+    padding: 10px 15px; 
+    background: #007bff; 
+    color: #ffffff; 
+    border: none; 
+    border-radius: 4px; 
+    cursor: pointer;
+    font-size: 18px;
+    white-space: nowrap;
+}
+
+.btn--love6 {
+    margin-right: 10px;
+    padding: 10px 15px;
+    width: 45%;
+}
+
+.btn--love6-1 {
+    width: 45%;
+}
+
+.btn:hover { 
+    background: #0056b3; 
+}
+
+.popup-body {
+    color: #ffffff;
+    font-size: 20px;
+}
+
+/*Всплывающее изображение справа снизу*/
+.image1-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    
+}
+
+.image1-container img {
+    width: 190px;
+    height: 190px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    object-fit: cover;
+    transform: scale(0.7);
+}
+
+.image1-container:hover img {
+    transform: translateY(-90px);
+}
+
+/*текст в всплывающем изображении*/
+.text {
+    margin-top: -90px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.image1-container:hover .text {
+    opacity: 1;
+    transition-delay: 0.2s;
+}
+
+.hover-container {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+
+.hover-container h1 {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/*Всплывающая надпись на Вход*/
+.tooltip {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    background: rgba(0, 0, 0, 0.2);
+    color: white;
+    padding: 20px 25px;
+    border-radius: 10px;
+    font-size: 18px;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+    white-space: nowrap;
+    backdrop-filter: blur(10px);
+}
+
+.hover-container:hover .tooltip {
+    opacity: 1;
+}
+
+.tooltip-button {
+    width: 120px;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 120%;
+    font-size: 12px;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 1s ease;
+    backdrop-filter: blur(10px);
+    pointer-events: none;
+
+}
+
+/* Показ надписи при наведении на кнопку */
+.button:hover .tooltip-button {
+    opacity: 1;
+
+}
+
+/*Изображения 2 котов*/
+.image-container {
+    position: fixed;
+    width: 250px;
+    height: 250px;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    transform: scale(1.5);
+}
+
+.image-container-center {
+    width: 400px;
+    height: 400px;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image-container.left {
+    left: 450px;
+    top: 380px;
+    
+}
+
+.image-container.right {
+    right: 450px;
+    top: 400px;
+}
+
+.image-container:hover {
+    transform: scale(1.7);
+}
+
+/* Текст над изображением */
+.image-tooltip {
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-size: 12px;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+    white-space: nowrap;
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(7px);
+}
+
+/* Текст видим при наведении */
+.image-container:hover .image-tooltip {
+    opacity: 1;
+}
+
+/*уведомление при нажатии на изображение*/
+.popup1 { 
+    position: fixed; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    width: 300px; 
+    padding: 20px; 
+    background: rgba(0, 0, 0, 0.2); 
+    box-shadow: 0 0 3px rgba(255, 255, 255, 0.5); 
+    border-radius: 15px; 
+    text-align: center; 
+    backdrop-filter: blur(10px);
+    display: none; 
+    z-index: 1000;
+    
+}
+
+.popup1-header {
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.close-btn1 {
+    background: transparent; 
+    border: none; 
+    font-size: 22px; 
+    cursor: pointer; 
+    color: #ffffff;
+    width: 24px; 
+    height: 24px; 
+    padding: 0; 
+    margin: 0; 
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+.popup-footer1 {
+    margin-top: 20px;
+}
+
+.overlay1 { 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    background: rgba(0, 0, 0, 0.5); 
+    display: none; 
+    z-index: 999; 
+}
+
+.btn1 { 
+    padding: 10px 20px; 
+    background: #007bff; 
+    color: #ffffff; 
+    border: none; 
+    border-radius: 4px; 
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.btn:hover1 { 
+    background: #0056b3; 
+}
+
+.popup1-body {
+    color: #ffffff;
+    font-size: 20px;
+}
+
+/*анимация*/
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Применение анимации */
+.fade-in {
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.fade-in--popup {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/*Текст в центре для /transitional и /stickers*/
+.text-center {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: 34px;
+    color: #ffffff;
+}
+
+.text-center--punish {
+    position: absolute; 
+    top: 220px;
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5)
+}
+
+/*кнопка продолжить*/
+.button {
+    position: absolute;
+    bottom: 70px;
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    left: 950px;
+    border-radius: 8px;
+    transition: 0.5s ease;
+    transform: scale(1.2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5) !important;
+}
+
+.button--back {
+    left: 720px;
+    background-color: rgba(0, 123, 255, 0);
+    backdrop-filter: blur(10px);
+}
+
+.button--origin {
+    left: 850px;
+}
+
+.button--punish {
+    background-color: #000000;
+}
+
+.button--unclickable {
+    cursor: grabbing;
+}
+
+.button:hover {
+    background-color: #0056b3;
+    transform: scale(1.3);
+}
+
+.button--punish:hover {
+    background-color: #3d3d3d;
+    transform: scale(1.3);
+}
+
+/*убегающая кнопка*/
+.unclickable-button {
+    position: absolute;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    width: 150px;
+    height: 50px; 
+    color: white;
+    transition: top 2s ease, left 2s ease; 
+}
+
+/*текст сверху*/
+.header-text {
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 56px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    white-space: nowrap;
+}
+/*текст справа снизу*/
+.text-bottom {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size: 25px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.5);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    white-space: nowrap;
+    text-decoration: underline;
+    text-decoration-color: rgba(255, 255, 255, 0.2);;
+}
+
+.text-bottom--undecoration {
+    text-decoration: none;
+}
+
+.text-bottom--left {
+    right: none;
+    left: 20px;
+}
+
+.text-bottom--left1 {
+    right: none;
+    left: 10px;
+    bottom: 10px;
+    font-size: 18px;
+}
+
+/* Стили для ссылки */
+.text-bottom a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Стили для "или" */
+.or-container {
+    position: relative;
+    display: inline-block;
+    font-size: 45px;
+    color: #ffffff;
+    margin: 20px 0;
+}
+
+/*изображение для второго слоя сверху*/
+.image-bg {
+    position: fixed;
+    top: 15px;
+    transform: scale(1);
+    overflow: cover;
+}
+
+/*текст для пословиц*/
+.text-proverbs {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    font-size: 30px;
+    color: rgba(500, 500, 500, 0.85);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    font-weight: bold;
+}
+
+.text-proverbs--1 {
+    top: 30%;
+    left: 10%;
+}
+
+.text-proverbs--2 {
+    top: 40%;
+    left: 10%;
+}
+
+.text-proverbs--3 {
+    top: 50%;
+    left: 10%;
+}
+
+.text-proverbs--4 {
+    top: 60%;
+    left: 10%;
+}
+
+.text-proverbs--5 {
+    top: 30%;
+    left: 55%;
+}
+
+.text-proverbs--6 {
+    top: 40%;
+    left: 55%;
+}
+
+.text-proverbs--7 {
+    top: 50%;
+    left: 55%;
+}
+
+.text-proverbs--8 {
+    top: 60%;
+    left: 55%;
+}
+
+
+.image-container-tog {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; 
+  }
+  
+  .image-container-tog img {
+    max-width: 100%;
+    height: 220px;
+    transition: transform 0.2s ease;
+  }
+
+  .image-container-tog img:hover {
+    transform: scale(1.3);
+  }
+
+  video {
+    width: 100%; /* Ширина видео */
+    height: auto; /* Высота автоматически подстраивается */
+    max-width: 800px; /* Максимальная ширина */
+    display: block; /* Убирает лишние отступы */
+    margin: 0 auto; /* Центрирование */
+  }

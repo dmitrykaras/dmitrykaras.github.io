@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/custom.css">
+    <link rel="icon" type="image/png" href="static/images/icon.png">
+    <title>Лежать и кушать)</title>
+</head>
+<body>
+    <div class="header-text fade-in">
+        Надо полежать и готовить кушать)
+    </div>
+    <div class="text-bottom text-bottom--undecoration fade-in">Квартира
+    </div>
+
+    <div class="button button--unclickable">
+        Продолжить &gt;&gt;&gt;
+        <div class="tooltip-button">Временно не работает</div>
+    </div>
+    
+    <a href="/love_general_5" class="button button--back"><<< Назад</a>
+
+    <div class="image-container left fade-in">
+        <img src="static/images/love_general_6/bad.png" alt="Изображение 1"
+        data-sound="static/sounds/sound1.mp3">
+        <div class="image-tooltip">— я люблю тебя<br>— и я тебя</div>
+    </div>
+    <div class="image-container right fade-in">
+        <img src="static/images/love_general_6/cook.png" alt="Изображение 2"
+        data-sound="static/sounds/sound1.mp3">
+        <div class="image-tooltip">Трапеция)))</div>
+    </div>
+
+    <div class="overlay fade-in--popup" id="overlay1"></div>
+
+    <div class="popup popup--love6 fade-in--popup" id="popup1">
+        <div class="popup-header">
+            <button class="close-btn" id="close-btn1">&times;</button>
+        </div>
+        <div class="popup-body">
+            <p>люблю тебя! <br>
+               мяу мяу мяу)<br>
+            (кровать не хочет отпускать нас)
+            </p>
+        </div>
+        <div class="popup-footer">
+            <button href="/love_general_1" class="btn btn--love6" id="ok-btn2">а я тебя не люблю</button>
+            <button class="btn btn--love6-1" id="ok-btn3">и я тебя люблю)</button>
+        </div>
+    </div>
+
+    <audio id="hover-sound"></audio>
+
+    <script src="static/js/script.js"defer></script>
+</body>
+</html>

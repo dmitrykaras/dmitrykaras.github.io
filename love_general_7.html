@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/custom.css">
+    <link rel="icon" type="image/png" href="static/images/icon.png">
+    <title>Путь к ❤️</title>
+</head>
+<body>
+    <div class="header-text fade-in">
+        Путь к моему сердцу ❤️
+    </div>
+    <div class="text-bottom text-bottom--undecoration fade-in">Нигде
+    </div>
+
+    <a href="/proverbs" class="button">Продолжить &gt;&gt;&gt;</a>
+    <a href="/love_general_6" class="button button--back"><<< Назад</a>
+
+    <div class="image-container right fade-in">
+        <img src="static/images/love_general_7/way2.png" alt="Изображение 1"
+        data-sound="static/sounds/sound1.mp3">
+        <div class="image-tooltip">вот такой вот путь)</div>
+    </div>
+
+    <div class="image-container left fade-in">
+        <img src="static/images/love_general_7/way1.png" alt="Изображение 1"
+        data-sound="static/sounds/sound1.mp3">
+        <div class="image-tooltip">мяу мяу мяу)</div>
+    </div>
+
+    <div class="overlay fade-in--popup" id="overlay1"></div>
+
+    <div class="popup fade-in--popup" id="popup1">
+        <div class="popup-header">
+            <button class="close-btn" id="close-btn1">&times;</button>
+        </div>
+        <div class="popup-body">
+            <p>это единственный путь)<br>
+               мяу мяу мяу)<br>
+            </p>
+        </div>
+        <div class="popup-footer">
+            <button class="btn" id="ok-btn1">хорошо...</button>
+        </div>
+    </div>
+
+    <audio id="hover-sound"></audio>
+    
+    <script src="static/js/script.js"defer></script>
+</body>
+</html>

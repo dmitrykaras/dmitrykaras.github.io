@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/custom.css">
+    <link rel="icon" type="image/png" href="static/images/icon.png">
+    <title>Мы у метро</title>
+</head>
+<body id="page2">
+    <div class="header-text fade-in">
+        08:35 или 10:25 — и снова кто-то из нас<br> ждёт другого у метро)
+    </div>
+    <div class="text-bottom fade-in">
+        <a href="https://yandex.ru/maps/-/CHqEM66x" target="_blank">Сенная площадь</a>
+    </div>
+
+    <div class="or-container fade-in">
+        или
+    </div>
+
+    <a href="/love_general_2" class="button button--origin">Продолжить &gt;&gt;&gt;</a>
+
+    <div class="image-container left fade-in">
+        <img src="static/images/love_general_1/d_metro.png" alt="Изображение 1" 
+        data-sound="static/sounds/sound1.mp3">
+        <div class="image-tooltip">ну и где он?(</div>
+    </div>
+    <div class="image-container right fade-in">
+        <img src="static/images/love_general_1/m_metro.png" alt="Изображение 2"
+        data-sound="static/sounds/sound1.mp3">
+        <div class="image-tooltip">ладно, подожду ещё...</div>
+    </div>
+
+    <div class="overlay fade-in--popup" id="overlay1"></div>
+
+    <div class="popup fade-in--popup" id="popup1">
+        <div class="popup-header">
+            <button class="close-btn" id="close-btn1">&times;</button>
+        </div>
+        <div class="popup-body">
+            <p>я не знаю что сказать... <br>
+               мяу мяу мяу)<br>
+            </p>
+        </div>
+        <div class="popup-footer">
+            <button class="btn" id="ok-btn1">Ладно</button>
+        </div>
+    </div>
+
+    <audio id="hover-sound"></audio>
+    
+    <script src="static/js/script.js"defer></script>
+</body>
+</html>
