@@ -1,5 +1,13 @@
+@font-face {
+    font-family: 'YourFont';
+    src: url('/static/fonts/1.woff') format('woff'),
+         url('/static/fonts/1.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'YourFont', sans-serif;
     background-image: url('/static/images/bg.jpg');
     background-size: cover;
     background-position: center;
@@ -96,6 +104,7 @@ button:hover {
     cursor: pointer; 
     color:#ffffff;
     outline: none;
+    font-family: 'YourFont', sans-serif;
 }
 
 .close-btn:focus {
@@ -122,6 +131,7 @@ button:hover {
 }
 
 .btn { 
+    font-family: 'YourFont', sans-serif;
     width: 100%;
     padding: 10px 15px; 
     background: #007bff; 
@@ -401,11 +411,15 @@ button:hover {
     animation: fadeIn 0.5s ease-in-out;
 }
 
+.fade-in--1 {
+    animation: fadeIn 10s ease-in-out;
+}
+
 /*Текст в центре для /transitional и /stickers*/
 .text-center {
     text-align: center;
-    font-family: Arial, sans-serif;
-    font-weight: bold;
+    font-family: 'YourFont', sans-serif;
+    font-weight: normal;
     font-size: 34px;
     color: #ffffff;
 }
@@ -415,6 +429,12 @@ button:hover {
     top: 220px;
     text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5)
 }
+
+.text-center--punish {
+    top: 120px;
+    
+}
+
 
 /*кнопка продолжить*/
 .button {
@@ -438,6 +458,10 @@ button:hover {
     left: 720px;
     background-color: rgba(0, 123, 255, 0);
     backdrop-filter: blur(10px);
+}
+
+.button--subtitles {
+    bottom: 100px;
 }
 
 .button--origin {
@@ -468,6 +492,7 @@ button:hover {
     padding: 10px 20px;
     font-size: 18px;
     cursor: pointer;
+    font-family: 'YourFont', sans-serif;
     background-color: #007bff;
     border: none;
     border-radius: 5px;
@@ -484,7 +509,7 @@ button:hover {
     left: 50%;
     transform: translateX(-50%);
     font-size: 56px;
-    font-weight: bold;
+    font-weight: normal;
     color: white;
     text-align: center;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
@@ -496,7 +521,7 @@ button:hover {
     bottom: 20px;
     right: 20px;
     font-size: 25px;
-    font-weight: bold;
+    font-weight: normal;
     color: rgba(255, 255, 255, 0.5);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     white-space: nowrap;
@@ -511,13 +536,6 @@ button:hover {
 .text-bottom--left {
     right: none;
     left: 20px;
-}
-
-.text-bottom--left1 {
-    right: none;
-    left: 10px;
-    bottom: 10px;
-    font-size: 18px;
 }
 
 /* Стили для ссылки */
@@ -551,7 +569,7 @@ button:hover {
     font-size: 30px;
     color: rgba(500, 500, 500, 0.85);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    font-weight: bold;
+    font-weight: normal;
 }
 
 .text-proverbs--1 {
@@ -601,20 +619,78 @@ button:hover {
     gap: 10px; 
   }
   
-  .image-container-tog img {
+.image-container-tog img {
     max-width: 100%;
     height: 220px;
     transition: transform 0.2s ease;
   }
 
-  .image-container-tog img:hover {
+.image-container-tog img:hover {
     transform: scale(1.3);
   }
 
-  video {
-    width: 100%; /* Ширина видео */
-    height: auto; /* Высота автоматически подстраивается */
-    max-width: 800px; /* Максимальная ширина */
-    display: block; /* Убирает лишние отступы */
-    margin: 0 auto; /* Центрирование */
+.video {
+    width: 100%;
+    height: auto;
+    max-width: 800px;
+    display: block;
+    margin: 0 auto;
   }
+
+.subtitles-container {
+    position: fixed;
+    bottom: 20px;
+    text-align: center;
+    width: 100%;
+    font-size: 24px;
+}
+
+.subtitles {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: inline-block;
+    cursor: default;
+}
+
+/* Стили для модального окна */
+.modal {
+    display: none; /* Скрыто по умолчанию */
+    position: fixed; /* Оставаться на месте */
+    z-index: 1000; /* Находиться поверх других элементов */
+    padding-top: 60px; /* Расположение контента */
+    left: 0;
+    top: 0;
+    width: 100%; /* Полная ширина */
+    height: 100%; /* Полная высота */
+    overflow: auto; /* Включить прокрутку, если нужно */
+    background-color: rgb(0,0,0); /* Цвет фона */
+    background-color: rgba(0,0,0,0.9); /* Черный с прозрачностью */
+}
+
+/* Стили для изображения внутри модального окна */
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 80vh;
+}
+
+/* Кнопка закрытия */
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}fade-in
